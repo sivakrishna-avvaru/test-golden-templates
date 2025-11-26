@@ -4,9 +4,9 @@ metadata:
   name: ${{ values.name }}
   description: ${{ values.description }}
   annotations:
-    github.com/project-slug: ${{ values.destinationOwner }}/${{ values.destinationRepo }}
+    github.com/project-slug: ramannkhanna2/${{ values.repo }}
+    backstage.io/techdocs-ref: dir:.
 spec:
   type: service
   owner: ${{ values.owner }}
   lifecycle: experimental
-
