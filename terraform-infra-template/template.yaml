@@ -35,7 +35,7 @@ spec:
         branchsuffix:
           type: string
           title: Unique PR branch Suffix
-          desciption: Leave this if ur creating the TF stack for the first time..
+          description: Leave this if ur creating the TF stack for the first time..
           
 
   steps:
