@@ -28,6 +28,11 @@ spec:
           type: string
           title: S3 Bucket Name
           description: Globally unique S3 bucket name
+        instancetype: 
+          type: string
+          title: Provide config for compute
+          description: Size of vm
+          
 
   steps:
     - id: fetch
@@ -40,6 +45,7 @@ spec:
           aws_region: ${{ parameters.aws_region }}
           vpc_cidr: ${{ parameters.vpc_cidr }}
           s3_bucket_name: ${{ parameters.s3_bucket_name }}
+          instancetype: ${{ parameters.instancetype }}
         
 
     - id: publishRepo
