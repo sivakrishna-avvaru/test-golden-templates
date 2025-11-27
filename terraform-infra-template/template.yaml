@@ -32,6 +32,10 @@ spec:
           type: string
           title: Provide config for compute
           description: Size of vm
+        branchsuffix:
+          type: string
+          title: Unique PR branch Suffix
+          desciption: Leave this if ur creating the TF stack for the first time..
           
 
   steps:
@@ -48,23 +52,23 @@ spec:
           instancetype: ${{ parameters.instancetype }}
         
 
-    # - id: publish
-    #   name: Publish to GitHub
-    #   action: publish:github
-    #   input:
-    #     repoUrl: github.com?owner=ramannkhanna2&repo=${{ parameters.project_name }}-infra
-    #     repoVisibility: public
-
-
-# In prod , we add a condition in prev steps if the github repo already exists or not than creates a PR for every change ... 
     - id: publish
-      name: Create PR on existing repo
-      action: publish:github:pull-request
+      name: Publish to GitHub
+      action: publish:github
       input:
         repoUrl: github.com?owner=ramannkhanna2&repo=${{ parameters.project_name }}-infra
-        branchName: "scaffolder-${{ parameters.project_name }}-${{ randomSuffix }}"
-        title: "Infra Update for ${{ parameters.project_name }}"
-        description: "Automatic scaffolder update."
+        repoVisibility: public
+
+
+    # In prod , we add a condition in prev steps if the github repo already exists or not than creates a PR for every change ... 
+    # - id: publish
+    #   name: Create PR on existing repo
+    #   action: publish:github:pull-request
+    #   input:
+    #     repoUrl: github.com?owner=ramannkhanna2&repo=${{ parameters.project_name }}-infra
+    #     branchName: "scaffolder-${{ parameters.project_name }}-${{ parameters.branchsuffix }}"
+    #     title: "Infra Update for ${{ parameters.project_name }}"
+    #     description: "Automatic scaffolder update."
 
           
 
