@@ -78,7 +78,7 @@ spec:
       input:
         location:
           type: url
-          target: https://github.com/ramannkhanna2/${{ parameters.project_name }}-infra/blob/main/catalog-info.yaml
+          target: "https://github.com/ramannkhanna2/${{ parameters.project_name }}-infra/blob/main/catalog-info.yaml"
 
 
   output:
