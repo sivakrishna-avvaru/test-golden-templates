@@ -68,6 +68,7 @@ spec:
       input:
         repoUrl: github.com?owner=ramannkhanna2&repo=${{ parameters.project_name }}-infra
         repoVisibility: public
+        protectDefaultBranch: false
     - id: wait
       name: Wait for GitHub to catch up
       action: debug:wait
@@ -89,6 +90,7 @@ spec:
     #   action: publish:github:pull-request
     #   input:
     #     repoUrl: github.com?owner=ramannkhanna2&repo=${{ parameters.project_name }}-infra
+    #     protectDefaultBranch: false
     #     branchName: "scaffolder-${{ parameters.project_name }}-${{ parameters.branchsuffix }}"
     #     title: "Infra Update for ${{ parameters.project_name }}"
     #     description: "Automatic scaffolder update."
