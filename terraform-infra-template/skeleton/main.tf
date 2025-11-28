@@ -28,6 +28,7 @@ resource "aws_instance" "example" {
     Name = "raman-HelloWorld-2"
   }
 
+}
 
 
 resource "aws_s3_bucket" "secure" {
